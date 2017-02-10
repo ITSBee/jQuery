@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<style>
+		div{
+      padding:8px 0px;
+      font-size:12px;
+      text-align:center;
+      border:solid 1px #888;
+    }
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+		$(document).ready(function () {
+			// $('div').html('Hello World!');
+			// var $oP = $('#demo').html('获取对象').css('color', 'red');
+
+			// var $oDiv = $('div');
+			// var oDiv = $oDiv[0];
+			// oDiv.style.color = 'red';
+
+			var oDiv = document.getElementsByTagName('div');
+			var $first = $(oDiv).first();
+			$first.css('border', '2px solid red').css('color', 'blue');
+		})
+	</script>
+</head>
+<body>
+	<div>item01</div>
+	<!-- <p id="demo"></p> -->
+	<div>item02</div>
+	<div>item03</div>
+</body>
+</html>

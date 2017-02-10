@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>基本筛选器</title>
+	<style>
+		.left {
+      width: auto;
+      height: 120px;
+    }
+    
+    .left div {
+      width: 70px;
+      height: 70px;
+      padding: 5px;
+      margin: 5px;
+      float: left;
+      background: #bbffaa;
+      border: 1px solid #ccc;
+    }
+    
+    .bottom {
+      width: 800px;
+    }
+    
+    .bottom div,
+    .bottom span {
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin: 5px;
+      background: #bbffaa;
+      float: left;
+      font-size: 14px;
+    }
+    
+    .bottom .small {
+      width: 60px;
+      height: 25px;
+      font-size: 12px;
+      background: #fab;
+    }
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.box:first').css('color', 'red');				//第一个元素
+			$('.box:last').css('color', 'blue');				//最后一个元素
+			$('.box:odd').css('border', '3px dotted purple');				//索引值为基数元素
+			$('.box:even').css('border', '3px double red');				//索引值为偶数元素
+			$('.demo:eq(2)').css('border', '3px double red');				//索引值等于2的元素
+			$('.demo:gt(2)').css('border', '3px dashed blue');				//索引值大于2的元素
+			$('.demo:lt(2)').css('border', '3px dotted green');				//索引值小于2的元素
+			$('input:not(:checked) + p').css('backgroundColor', 'green');				//不匹配指定属性的元素
+		});
+	</script>
+</head>
+<body>
+	<h2>基本筛选器</h2>
+	<h3>:first/:last/:even/:odd</h3>
+	<div class="left">
+	  <div class="box">
+	    <p>div:first</p>
+	    <p>:even</p>
+	  </div>
+	  <div class="box">
+	    <p>:odd</p>
+	  </div>
+	  <div class="box">
+	    <p>:even</p>
+	  </div>
+	  <div class="box">
+	    <p>:odd</p>
+	  </div>
+	  <div class="box">
+	    <p>:even</p>
+	  </div>
+	  <div class="box">
+	    <p>div:last</p>
+	    <p>:odd</p>
+	  </div>
+	</div>
+	  
+	<h3>:eq/:gt/:lt</h3>
+	<div class="left">
+	  <div class="demo">
+	    <p>:lt(3)</p>
+	  </div>
+	  <div class="demo">
+	    <p>:lt(3)</p>
+	  </div>
+	  <div class="demo">
+	    <p>:eq(2)</p>
+	  </div>
+	  <div class="demo">
+	  </div>
+	  <div class="demo">
+	    <p>:gt(3)</p>
+	  </div>
+	  <div class="demo">
+	    <p>:gt(3)</p>
+	  </div>
+	</div>
+
+	<h3>:not</h3>
+	<div class="left">
+	  <div>
+	    <input type="checkbox" name="a" />
+	    <p>item01</p>
+	  </div>
+	  <div>
+	    <input type="checkbox" name="b" />
+	    <p>item02</p>
+	  </div>
+	  <div>
+	    <input type="checkbox" name="c" checked="checked" />
+	    <p>item03</p>
+	  </div>
+	</div>
+</body>
+</html>
